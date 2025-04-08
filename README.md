@@ -1,163 +1,71 @@
+🎨 CSS-to-SASS Converter
+A simple CLI tool and library to convert standard .css files into .scss (SASS) format. Ideal for developers looking to migrate CSS projects to SASS without manually editing stylesheets.
 
-CSS to Sass Converter
+📦 Installation
+Global (recommended for CLI use)
+bash
+npm install -g css-to-sass-converter
+Local (for project or library use)
+bash
+npm install css-to-sass-converter
+🚀 Usage
+Convert a CSS file to SCSS
+bash
+css2sass styles.css
+By default, this will create a styles.scss file in the same directory.
 
-This package allows you to convert CSS files into Sass syntax (`.scss`) through a simple command-line tool. Below are the steps to install, run, and debug the tool.
-
-Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Debugging](#debugging)
-- [Troubleshooting](#troubleshooting)
-
-
-Installation
-
-Follow these steps to install and use the `css2sass` package.
-
-1. Clone the Repository
-
-If you haven't already, start by cloning the repository to your local machine:
-
-```bash
-git clone https://github.com/yourusername/css-to-sass-converter.git
+🧪 Development Setup
+Clone the Repo
+bash
+git clone https://github.com/your-username/css-to-sass-converter.git
 cd css-to-sass-converter
-```
-
-2. Install Dependencies
-
-Run the following command to install the necessary dependencies:
-
-```bash
+Install Dependencies
+bash
 npm install
-```
+Test Conversion Script
+bash
+node bin/index.js styles.css
+Or use the test script:
 
-This will install all the required dependencies defined in `package.json`.
-3. Link the Package Globally (Optional)
+bash
+npm test
+🐛 Debugging Tips
+If you're seeing errors like:
 
-If you want to be able to use `css2sass` from anywhere on your system, you can link the package globally using the following command:
+SyntaxError: Cannot use import statement outside a module
 
-```bash
-npm link
-```
+Make sure:
 
-This will create a global symlink for the package, allowing you to run the `css2sass` command from any terminal window.
+You're using Node.js 14+.
 
+You have "type": "module" set in your package.json.
 
+You run your script with node and not a non-module aware runner.
 
- Usage
+If you're getting a permission error:
 
-Once the package is installed and linked, you can use the `css2sass` command to convert a CSS file into Sass.
+bash
+Copy
+Edit
+Permission denied or cannot execute
+Make sure your CLI file is executable:
 
-1. Run the Command
-
-Use the following syntax to run the tool:
-
-```bash
-css2sass <input-file> <output-file>
-```
-
-Example:
-
-```bash
-css2sass styles.css styles.scss
-```
-
-This will read the contents of `styles.css`, convert it into Sass format, and save it in `styles.scss`.
-
-2. Command Line Arguments
-
-- `<input-file>`: The path to the `.css` file you want to convert.
-- `<output-file>`: The path where the converted `.scss` file should be saved.
-
-
-
-Debugging
-
-If you encounter issues while using the tool, you can follow these steps to troubleshoot:
-
-1. Check for Errors
-
-If an error occurs when you run the `css2sass` command, carefully check the output message. Errors are often caused by:
-
-- Missing files or incorrect paths
-- Incorrect syntax in the CSS file
-- Missing or incorrect package dependencies
-
-2. Check `package.json` for Bin Configuration
-
-Ensure the `bin` configuration in `package.json` is correct:
-
-```json
-"bin": {
-  "css2sass": "./bin/index.js"
-}
-```
-
-The `css2sass` entry should point to the correct file that handles the conversion logic.
-
-3. Verify Executable Permissions
-
-If you’re on a Unix-based system (Linux/macOS), ensure that your `index.js` file has executable permissions:
-
-```bash
+bash
 chmod +x bin/index.js
-```
+📁 Project Structure
+pgsql
+css-to-sass-converter/
+│
+├── bin/
+│   └── index.js         # CLI entry
+├── lib/
+│   └── converter.js     # Conversion logic
+├── styles.css           # Sample input for testing
+├── package.json
+└── README.md
+👨‍💻 Author
+Dev Segun P. Omoni
 
-4. Check the Global Bin Path
-
-If you’ve linked the package globally but it’s still not working, verify the global bin directory:
-
-```bash
-npm bin -g
-```
-
-Ensure that the `css2sass` command is available in the global bin directory.
-
-5. Reinstall the Package
-
-If nothing else works, try uninstalling and reinstalling the package globally:
-
-1. Unlink the current global package:
-
-   ```bash
-   npm unlink -g css-to-sass-converter
-   ```
-
-2. Reinstall the package globally:
-
-   ```bash
-   npm install -g .
-   ```
-
-
-
-Troubleshooting
-
-If you still face issues after following the above steps, check the following common problems:
-
-1. Command Not Found
-
-- If the `css2sass` command is not recognized, ensure that you've run `npm link` to link the package globally, or check the global installation path using `npm bin -g`.
-
-2. Errors Related to Node.js or npm
-
-- Make sure you have the latest version of Node.js and npm installed. Update them if necessary:
-
-  ```bash
-  node -v
-  npm -v
-  ```
-
-  If they are outdated, download the latest versions from the official [Node.js website](https://nodejs.org/).
-
-3. Permissions Issues
-
-- Ensure that your project files have the correct permissions to be executed. On Unix-based systems, you can use the `chmod +x` command to make the script executable.
-
-
-License
-
-This package is licensed under the MIT License. See the LICENSE file for more information.
-
+📄 License
+This project is licensed under the ISC License.
 
