@@ -4,31 +4,41 @@ A simple CLI tool and library to convert standard .css files into .scss (SASS) f
 📦 Installation
 Global (recommended for CLI use)
 bash
-npm install -g css-to-sass-converter
+npm install -g css-to-sass-converter,
+
 Local (for project or library use)
 bash
-npm install css-to-sass-converter
+npm install css-to-sass-converter,
+
 🚀 Usage
 Convert a CSS file to SCSS
+
 bash
-css2sass styles.css
+css2sass styles.css,
+
 By default, this will create a styles.scss file in the same directory.
 
 🧪 Development Setup
 Clone the Repo
 bash
-git clone https://github.com/your-username/css-to-sass-converter.git
-cd css-to-sass-converter
-Install Dependencies
+git clone https://github.com/your-username/css-to-sass-converter.git,
+
+cd css-to-sass-converter,
+
+Install Dependencies,
+
 bash
-npm install
+npm install,
+
 Test Conversion Script
 bash
-node bin/index.js styles.css
+node bin/index.js styles.css,
+
 Or use the test script:
 
 bash
-npm test
+npm test,
+
 🐛 Debugging Tips
 If you're seeing errors like:
 
@@ -45,16 +55,16 @@ You run your script with node and not a non-module aware runner.
 If you're getting a permission error:
 
 bash
-Copy
-Edit
 Permission denied or cannot execute
 Make sure your CLI file is executable:
 
 bash
-chmod +x bin/index.js
-📁 Project Structure
-pgsql
-css-to-sass-converter/
+chmod +x bin/index.js,
+
+📁 Project Structure,
+
+css-to-sass-converter/,
+
 │
 ├── bin/
 │   └── index.js         # CLI entry
